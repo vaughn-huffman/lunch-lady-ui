@@ -46,14 +46,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="index.html">Lunch Lady Land</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
             	<li id="login_dropdown" class="dropdown">
                     <a href="#" class="dropdown-toggle login_highlight" data-toggle="dropdown">Login <b class="caret"></b></a>
                     <div class="dropdown-menu login_highlight">
-                    	<form id="app_login_form">
+                    	<!-- START : Login Form -->
+						<form id="app_login_form" style="display: block;">
                     		<div class="form-group">
 								<input id="login_user" name="login_user" class="form-control" type="text" value="" placeholder="User Name"/>
 								<b class="fa fa-user"></b>
@@ -63,11 +64,66 @@
 								<b class="fa fa-lock"></b>
 								<a class="">Forgot Password?</a>
 							</div>
-							<input class="form-control" type="submit" value="Login"/>
+							<input id="login_submit" class="form-control" type="submit" value="Login"/>
 							<div class="input-group">
 								<a class="">Create New Account</a>
 							</div>
-						</form
+						</form>
+						<!-- END : Login Form -->
+						<!-- START : Account Creation Form -->
+						<form id="app_create_account_form" style="display: none;">
+							<h2>- Account Information -</h2>
+							<div class="row">
+								<div class="col-xs-12">
+									<input id="createAcct_email" name="" class="form-control" type="text" value="" placeholder="E-mail Address"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<input id="createAcct_pw" name="" class="form-control" type="password" value="" placeholder="Password"/>
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									<input id="createAcct_repeatPw" name="" class="form-control" type="password" value="" placeholder="Repeat Password"/>
+								</div>
+							</div>
+							<h2>- Contact Information -</h2>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<input id="createAcct_fName" name="" class="form-control" type="text" value="" placeholder="First Name"/>
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									<input id="createAcct_lName" name="" class="form-control" type="text" value="" placeholder="Last Name"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<input id="createAcct_phone" name="" class="form-control" type="text" value="" placeholder="Phone #"/>
+								</div>
+							</div>
+							<h2>- Location -</h2>
+							<div class="row">
+								<div class="col-xs-12">
+									<select id="createAcct_location" name="" class="form-control">
+										<!-- Swap these out with dynamic locations -->
+										<option>Selection a Delivery Location</option>
+										<option>Location 1</option>
+										<option>Location 2</option>
+										<option>Location 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<input id="createAcct_submit" class="form-control" type="submit" value="Create Account"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<input id="createAcct_cancel" class="form-control" type="button" value="Cancel"/>
+								</div>
+							</div>
+						</form>
+						<!-- END : Account Creation Form -->
                     </div>
                 </li>
             	<!-- START USER LOGGED IN : IF USER IS LOGGED IN, USE THE FOLLOWING -->
