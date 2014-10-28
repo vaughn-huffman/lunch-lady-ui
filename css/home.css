@@ -18,6 +18,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	border-bottom: 1px dotted #fff;
+	font-size: 12px;
 }
 #login_dropdown>div.dropdown-menu input[type=submit] {
 	margin-top: 50px;
