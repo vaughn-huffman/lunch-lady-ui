@@ -1,0 +1,60 @@
+/* Home CSS File */
+
+/* START CSS FOR LOGIN SECTION */
+#login_dropdown>a, #login_dropdown>a:link, #login_dropdown>a:visited, #login_dropdown>a:active {
+	border-radius: 5px;
+	padding: 15px 30px;
+	box-shadow: inset 2px 2px rgba(255,255,255,0.3);
+	color: #fff;
+}
+#login_dropdown>a:hover {
+	background: #5cb85c;
+}
+#login_dropdown>div.dropdown-menu {
+	padding: 15px;
+}
+#login_dropdown>div.dropdown-menu a {
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+	border-bottom: 1px dotted #fff;
+}
+#login_dropdown>div.dropdown-menu input[type=submit] {
+	margin-top: 50px;
+}
+#login_dropdown>div.dropdown-menu input[type=text], 
+#login_dropdown>div.dropdown-menu input[type=password] {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3) inset;
+	padding-right: 30px;
+}
+#login_dropdown>div.dropdown-menu .form-group{
+	position: relative;
+}
+#login_dropdown>div.dropdown-menu .form-group>b.fa{
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	font-size: 20px;
+	color: #5cb85c;
+}
+#login_dropdown>.dropdown-menu {
+	width: 250px;
+	border-top: 0;
+}
+#login_dropdown.open>a {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.login_highlight {
+	background: #5cb85c !important;
+}
+
+@media only screen 
+and (max-width : 768px) {
+/* Styles */
+	#login_dropdown>.dropdown-menu {
+		width: 100%;
+		position: fixed;
+	}
+}
+/* END CSS FOR LOGIN SECTION */
