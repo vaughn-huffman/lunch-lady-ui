@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="lunchladyApp">
 
 <head>
 
@@ -47,22 +47,25 @@
                 <a class="navbar-brand" href="index.html">Lunch Lady Land</a>
             </div>
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-            	<li id="login_dropdown" class="dropdown" style="display: block;">
+            <ul class="nav navbar-right top-nav" data-ng-if="!activeUser">
+            	<li id="login_dropdown" class="dropdown" style="display: block;" data-ng-controller="UserLoginController as userLoginCtrl">
                     <a href="#" class="dropdown-toggle login_highlight" data-toggle="dropdown">Login <b class="caret"></b></a>
                     <div class="dropdown-menu login_highlight">
                     	<!-- START : Login Form -->
-						<form id="app_login_form" style="display: block;">
+						<div data-ng-show="error" class="alert alert-danger">{{error}}</div>
+						<form id="app_login_form" name="appLoginForm" style="display: block;" data-ng-submit="login()">
                     		<div class="form-group">
-								<input id="login_user" name="login_user" class="form-control" type="text" value="" placeholder="User Name"/>
+								<input id="login_user" name="username" ng-model="username" class="form-control" type="text" value="" placeholder="User Name" required />
 								<b class="fa fa-user"></b>
+								<span ng-show="appLoginForm.username.$dirty && appLoginForm.username.$error.required" class="help-block">Username is required</span>
 							</div>
                     		<div class="form-group">
-								<input id="login_pw" name="login_pw" class="form-control" type="password" value="" placeholder="Password"/>
+								<input id="login_pw" name="password" ng-model="password" class="form-control" type="password" value="" placeholder="Password" required />
 								<b class="fa fa-lock"></b>
+								<span data-ng-show="appLoginForm.password.$dirty && appLoginForm.password.$error.required" class="help-block">Password is required</span>
 								<a class="">Forgot Password?</a>
 							</div>
-							<input id="login_submit" class="form-control" type="submit" value="Login"/>
+							<input id="login_submit" class="form-control" type="submit" value="Login" />
 							<div class="input-group">
 								<a id="create_new_acct_link">Create New Account</a>
 							</div>
@@ -124,10 +127,12 @@
 						<!-- END : Account Creation Form -->
                     </div>
                 </li>
+			</ul>
 				<!-- -->
             	<!-- START USER LOGGED IN : IF USER IS LOGGED IN, USE THE FOLLOWING -->
 				<!-- -->
-				<li class="dropdown" style="display: none">
+			<ul class="nav navbar-right top-nav" data-ng-if="activeUser">
+				<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
                     <ul class="dropdown-menu">
 						<li>
@@ -144,7 +149,7 @@
                         </li>
                     </ul>
                 </li>
-				<li class="dropdown" style="display: none">
+				<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurants <b class="caret"></b></a>
                     <ul class="dropdown-menu">
 						<li><a href="#">Restaurant 1</a></li>
@@ -157,10 +162,10 @@
 						<li><a href="#">Restaurant 8</a></li>
                     </ul>
                 </li>
-                <li id="activeUser_dropdown" class="dropdown" style="display: none">
+                <li id="activeUser_dropdown">
 					<!-- IF USER HAS PROFILE IMAGE : ELSE USE STOCK IMAGE -->
 					<img class="profile-pic" src="images/anonymous.jpg" />
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{activeUser.firstName}} {{activeUser.lastName}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -278,6 +283,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+	<!-- AngularJS Dependencies -->
+    <script src="js/angular/framework/1.3.2/angular.js"></script>
+	<script src="js/angular/framework/1.3.2/angular-cookies.js"></script>
+	<script src="js/angular/services/AuthenticationService.js"></script>
+	<script src="js/angular/controllers/UserLoginController.js"></script>
+	<script src="js/angular/app.js"></script>
+	
 	<!-- Sample Home JS file for demo purposes. Will likely be replaced by Angular or Backbone Controllers -->
     <script src="js/home.js"></script>
 </body>
