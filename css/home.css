@@ -119,7 +119,6 @@ and (max-width : 767px) {
 }
 #new_order_info {
 	resize: none;
-	margin-top: 50px;
 	margin-bottom: 10px;
 	height: 200px;
 }
@@ -131,4 +130,8 @@ and (max-width : 767px) {
 }
 #new_order_form p.lead {
 	margin: 10px 0;
+}
+#new_order_view_menu {
+	float: right;
+	cursor: pointer;
 }
