@@ -15,7 +15,7 @@
 #login_dropdown>div.dropdown-menu {
 	padding: 15px;
 }
-#login_dropdown>div.dropdown-menu a {
+#app_login_form a {
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
@@ -128,4 +128,18 @@ and (max-width : 767px) {
 }
 #new_order_go_back {
 	margin-top: 10px;
+}
+#createAcct_cancel, #createAcct_cancel:link, #createAcct_cancel:active, #createAcct_cancel:visited, #createAcct_cancel:hover {
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	color: #555;
+}
+#login_dropdown .alert {
+	padding: 5px 15px;
+	text-align: center;
+}
+#login_dropdown>div.dropdown-menu .form-group>b.fa-lock {
+	right: 12px;
 }
