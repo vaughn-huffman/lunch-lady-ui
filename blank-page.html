@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="lunchladyApp">
 
 <head>
 
@@ -34,162 +34,17 @@
 
 <body>
     <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Lunch Lady Land</a>
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-            	<li id="login_dropdown" class="dropdown" style="display: block;">
-                    <a href="#" class="dropdown-toggle login_highlight" data-toggle="dropdown">Login <b class="caret"></b></a>
-                    <div class="dropdown-menu login_highlight">
-                    	<!-- START : Login Form -->
-						<form id="app_login_form" style="display: block;">
-                    		<div class="form-group">
-								<input id="login_user" name="login_user" class="form-control" type="text" value="" placeholder="User Name"/>
-								<b class="fa fa-user"></b>
-							</div>
-                    		<div class="form-group">
-								<input id="login_pw" name="login_pw" class="form-control" type="password" value="" placeholder="Password"/>
-								<b class="fa fa-lock"></b>
-								<a class="">Forgot Password?</a>
-							</div>
-							<input id="login_submit" class="form-control" type="submit" value="Login"/>
-							<div class="input-group">
-								<a id="create_new_acct_link">Create New Account</a>
-							</div>
-						</form>
-						<!-- END : Login Form -->
-						<!-- START : Account Creation Form -->
-						<form id="app_create_account_form" style="display: none;">
-							<h2>- Account Information -</h2>
-							<div class="row">
-								<div class="col-xs-12">
-									<input id="createAcct_email" name="" class="form-control" type="text" value="" placeholder="E-mail Address"/>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-sm-6">
-									<input id="createAcct_pw" name="" class="form-control" type="password" value="" placeholder="Password"/>
-								</div>
-								<div class="col-xs-12 col-sm-6">
-									<input id="createAcct_repeatPw" name="" class="form-control" type="password" value="" placeholder="Repeat Password"/>
-								</div>
-							</div>
-							<h2>- Contact Information -</h2>
-							<div class="row">
-								<div class="col-xs-12 col-sm-6">
-									<input id="createAcct_fName" name="" class="form-control" type="text" value="" placeholder="First Name"/>
-								</div>
-								<div class="col-xs-12 col-sm-6">
-									<input id="createAcct_lName" name="" class="form-control" type="text" value="" placeholder="Last Name"/>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-sm-6">
-									<input id="createAcct_phone" name="" class="form-control" type="text" value="" placeholder="Phone #"/>
-								</div>
-							</div>
-							<h2>- Location -</h2>
-							<div class="row">
-								<div class="col-xs-12">
-									<select id="createAcct_location" name="" class="form-control">
-										<!-- Swap these out with dynamic locations -->
-										<option>Selection a Delivery Location</option>
-										<option>Location 1</option>
-										<option>Location 2</option>
-										<option>Location 3</option>
-									</select>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<input id="createAcct_submit" class="form-control" type="submit" value="Create Account"/>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<input id="createAcct_cancel" class="form-control" type="button" value="Cancel"/>
-								</div>
-							</div>
-						</form>
-						<!-- END : Account Creation Form -->
-                    </div>
-                </li>
-				<!-- -->
-            	<!-- START USER LOGGED IN : IF USER IS LOGGED IN, USE THE FOLLOWING -->
-				<!-- -->
-				<li class="dropdown" style="display: none">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-						<li>
-                            <a href="#">My Orders</a>
-                        </li>
-                        <li>
-                            <a href="#">By Location</a>
-                        </li>
-						<li>
-                            <a href="#">View by Order Time</a>
-                        </li>
-						<li>
-                            <a href="#">By Restaurant</a>
-                        </li>
-                    </ul>
-                </li>
-				<li class="dropdown" style="display: none">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurants <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-						<li><a href="#">Restaurant 1</a></li>
-						<li><a href="#">Restaurant 2</a></li>
-						<li><a href="#">Restaurant 3</a></li>
-						<li><a href="#">Restaurant 4</a></li>
-						<li><a href="#">Restaurant 5</a></li>
-						<li><a href="#">Restaurant 6</a></li>
-						<li><a href="#">Restaurant 7</a></li>
-						<li><a href="#">Restaurant 8</a></li>
-                    </ul>
-                </li>
-                <li id="activeUser_dropdown" class="dropdown" style="display: none">
-					<!-- IF USER HAS PROFILE IMAGE : ELSE USE STOCK IMAGE -->
-					<img class="profile-pic" src="images/anonymous.jpg" />
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-coffee"></i> My Order History</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-				<!-- -->
-				<!-- END USER LOGGED IN -->
-				<!-- -->
-            </ul>
+        
+		<!-- Header -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-include="'views/common/header.html'"></nav>
 
-            <!-- /.navbar-collapse -->
-        </nav>
-
-        <div id="page-wrapper">
-        	<div id="startup" class="container-fluid">
+		<!-- Page Wrapper -->
+        <div id="page-wrapper" data-ng-controller="OrderController as orderCtrl">
+        	<div id="startup" class="container-fluid" data-ng-if="!activeUser">
         		<p class="lead">Please Login to Get Started (Note: Demo Only. Will remove once application is functional...)</p>
         	</div>
-            <div id="new_order_container" class="container-fluid" style="display: none;">
+			
+            <div id="new_order_container" class="container-fluid" data-ng-if="activeUser">
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -197,92 +52,7 @@
                     </div>
                 </div>
                 
-                <form id="new_order_form">
-					<div class="row">
-						<div class="col-sm-4">
-							<p class="lead">Choose a Delivery Time</p>
-						</div>
-						<div class="col-sm-8">
-		              		<select id="new_order_time_selection" name="" class="form-control greenBtn tallBtn">
-								<option>Selection a Delivery Time</option>
-								<option>11:00AM</option>
-								<option>11:15AM</option>
-								<option>11:30AM</option>
-								<option>11:45AM</option>
-								<option>12:00PM</option>
-								<option>12:15PM</option>
-								<option>12:30PM</option>
-								<option>12:45PM</option>
-								<option>1:00PM</option>
-								<option>1:15PM</option>
-								<option>1:30PM</option>
-								<option>1:45PM</option>
-								<option>2:00PM</option>
-								<option>2:15PM</option>
-								<option>2:30PM</option>
-								<option>2:45PM</option>
-							</select>
-						</div>
-						
-						<div class="col-sm-4">
-							<p class="lead">Choose a Restaurant</p>
-						</div>
-						
-						<div class="col-sm-8">
-							<select id="new_order_restaurant_selection" name="" class="form-control greenBtn tallBtn">
-								<!-- Swap these out with dynamic locations -->
-								<option>Select a Delivery Location</option>
-								<option>Jimmy Johns</option>
-								<option>Pizza Hut</option>
-								<option>Dominos</option>
-								<option>Erbert's and Gerbert's</option>
-							</select>
-							<div class="col-xs-12">
-								<a id="new_order_view_menu">View Menu</a>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<p class="lead">Choose your Location</p>
-						</div>
-						
-						<div class="col-sm-8">
-							<select id="new_order_office_selection" name="" class="form-control greenBtn tallBtn">
-								<!-- Swap these out with dynamic locations -->
-								<option>Select an Office Location</option>
-								<option>Kearney North</option>
-								<option>Kearney South</option>
-								<option>Ames Old Office</option>
-								<option>Ames New Office</option>
-								<option>Atlanta</option>
-								<option>Fort Collins</option>
-								<option>Manhattan</option>
-								<option>Pune</option>
-							</select>
-						</div>
-	              	</div>
-	               
-					<div class="row">
-						<div class="col-xs-12">
-							<p class="lead">Order Information</p>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-xs-12">
-							<textarea id="new_order_info" class="form-control" placeholder="Your Order Information Here"></textarea>
-						</div>
-						<div class="col-xs-12">
-							<input id="new_order_estimated_cost" type="text" class="form-control" placeholder="Estimated Cost $" value="" />
-						</div>
-						<div class="col-sm-6">
-							<button id="new_order_cancel" name="" class="form-control greenBtn tallBtn" type="button">Cancel Order</button>
-						</div>
-						<div class="col-sm-6">
-							<button id="new_order_submit" name="" class="form-control greenBtn tallBtn" type="button">Submit Order</button>
-						</div>
-					</div>
-	        	</form>
+                <form id="new_order_form" data-ng-include="'views/order/order_form.html'"></form>
             </div>
             <!-- /.container-fluid -->
 
@@ -298,8 +68,14 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-	<!-- Sample Home JS file for demo purposes. Will likely be replaced by Angular or Backbone Controllers -->
-    <script src="js/home.js"></script>
+	<!-- AngularJS Dependencies -->
+    <script src="js/angular/framework/1.3.2/angular.js"></script>
+	<script src="js/angular/framework/1.3.2/angular-cookies.js"></script>
+	<script src="js/angular/framework/1.3.2/angular-route.js"></script>
+	<script src="js/angular/app.js"></script>
+	<script src="js/angular/controllers/UserLoginController.js"></script>
+	<script src="js/angular/controllers/OrderController.js"></script>
+	<script src="js/angular/services/AuthenticationService.js"></script>
 </body>
 
 </html>
