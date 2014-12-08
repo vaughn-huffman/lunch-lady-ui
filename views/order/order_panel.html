@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Create a New Order</h1>
+	</div>
+</div>
+
+<form id="new_order_form">
+	<div id="order_panel_1" class="row order_panel" data-ng-show="wizard().isSelected(SHOW_ORDER_PANEL_TIME)" data-ng-include="'views/order/order_panel_1.html'"></div>
+	<div id="order_panel_2" class="row order_panel" data-ng-show="wizard().isSelected(SHOW_ORDER_PANEL_INFO)" data-ng-include="'views/order/order_panel_2.html'"></div>
+	<div id="order_panel_3" class="row order_panel" data-ng-show="wizard().isSelected(SHOW_ORDER_PANEL_CONFIRM)" data-ng-include="'views/order/order_panel_3.html'"></div>
+	<div class="row">
+		<div class="col-lg-12">
+			<button id="new_order_go_back" data-ng-show="!wizard().isSelected(SHOW_ORDER_PANEL_TIME)" data-ng-click="wizard().goBack()" class="form-control greenBtn tallBtn" type="button">Go Back</button>
+		</div>
+	</div>
+</form>
