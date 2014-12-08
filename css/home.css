@@ -97,6 +97,9 @@ and (max-width : 767px) {
 	ul.navbar-right {
 		display: none;
 	}
+	#new_order_cancel, #new_order_submit {
+		margin-bottom: 10px;
+	}
 }
 /* END CSS FOR LOGIN SECTION */
 .greenBtn {
@@ -116,7 +119,6 @@ and (max-width : 767px) {
 }
 #new_order_info {
 	resize: none;
-	margin-top: 50px;
 	margin-bottom: 10px;
 	height: 200px;
 }
@@ -126,6 +128,10 @@ and (max-width : 767px) {
 #new_order_estimated_cost {
 	margin-bottom: 10px;
 }
-#new_order_go_back {
-	margin-top: 10px;
+#new_order_form p.lead {
+	margin: 10px 0;
+}
+#new_order_view_menu {
+	float: right;
+	cursor: pointer;
 }
