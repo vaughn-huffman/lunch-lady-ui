@@ -101,6 +101,13 @@ and (max-width : 767px) {
 		margin-bottom: 10px;
 	}
 }
+@media only screen 
+and (min-width : 767px) {
+	#page-wrapper {
+		margin: 0 auto;
+		width: 960px;
+	}
+}
 /* END CSS FOR LOGIN SECTION */
 .greenBtn {
 	background:#5cb85c;
