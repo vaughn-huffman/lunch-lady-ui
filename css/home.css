@@ -110,7 +110,7 @@ and (min-width : 767px) {
 }
 /* END CSS FOR LOGIN SECTION */
 .greenBtn {
-	background:#5cb85c;
+	background: #5cb85c;
 	box-shadow: inset 2px 2px rgba(255,255,255,0.3);
 	color: #fff;
 	cursor: pointer;
@@ -138,10 +138,6 @@ and (min-width : 767px) {
 #new_order_form p.lead {
 	margin: 10px 0;
 }
-#new_order_view_menu {
-	float: right;
-	cursor: pointer;
-}
 #new_order_go_back {
 	margin-top: 10px;
 }
@@ -158,4 +154,21 @@ and (min-width : 767px) {
 }
 #login_dropdown>div.dropdown-menu .form-group>b.fa-lock {
 	right: 12px;
+}
+.fa.fa-greenBtn {
+	background-color: #5cb85c;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	margin: 5px 0 5px 5px;
+	float: right;
+	cursor: pointer;
+	border-radius: 4px;
+	box-shadow: inset 2px 2px rgba(255,255,255,0.3);
+}
+.fa.fa-greenBtn:hover {
+	background: #53A853;
 }
