@@ -1,0 +1,23 @@
+<div class="col-lg-12">
+	<p class="lead">What would you like to eat?</p>
+</div>
+<div class="col-lg-12">
+	<select id="new_order_restaurant_selection" data-ng-model="order.restaurant" class="form-control greenBtn tallBtn">
+		<!-- Swap these out with dynamic locations -->
+		<option>Select a Delivery Location</option>
+		<option>Jimmy Johns</option>
+		<option>Pizza Hut</option>
+		<option>Dominos</option>
+		<option>Erbert's and Gerbert's</option>
+	</select>
+	<a id="new_order_view_menu">View Menu</a>
+</div>
+<div class="col-lg-12">
+	<textarea id="new_order_info" data-ng-model="order.info" class="form-control" placeholder="Your Order Information Here"></textarea>
+</div>
+<div class="col-lg-12">
+	<input id="new_order_estimated_cost" data-ng-model="order.cost" type="text" class="form-control" placeholder="Estimated Cost $" value="" />
+</div>
+<div class="col-lg-12">
+	<button id="new_order_submit_order_info" type="button" class="form-control greenBtn tallBtn" data-ng-click="wizard().proceed()">Submit Order</button>
+</div>
